@@ -1,0 +1,19 @@
+warn("Executed Fire All")
+
+local tp1 = "Club Red"
+local tp2 = "Dragonbreath Potion"
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(tp1, tp2)
+wait(0.2)
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local backitem = LocalPlayer.Backpack["Dragonbreath Potion"]
+backitem.Parent = game:GetService("Workspace")[LocalPlayer.Name]
+ 
+local Players = game:GetService("Players"):GetChildren()
+ 
+for I,V in pairs(Players) do 
+	print(I,V)
+	local E = game:GetService("Workspace")[V.Name]:GetChildren()
+	for I,V in pairs(E) do 
+		game:GetService("Workspace")[LocalPlayer.Name]["Dragonbreath Potion"].GenerateEffect:FireServer(V)
+	end
+end

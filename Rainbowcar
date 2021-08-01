@@ -1,0 +1,21 @@
+if _G.Rainbowcar == true then
+	_G.Rainbowcar = false
+else
+	_G.Rainbowcar = true
+end
+_G.Seizurecar = false
+
+while _G.Rainbowcar do
+	game:GetService("ReplicatedStorage").RemoteFunctions.ApplySelectedPaint:FireServer(22)
+	wait(0.1)
+	game:GetService("ReplicatedStorage").RemoteFunctions.ApplySelectedPaint:FireServer(13)
+	wait(0.1)
+	game:GetService("ReplicatedStorage").RemoteFunctions.ApplySelectedPaint:FireServer(40)
+	wait(0.1)
+	game:GetService("ReplicatedStorage").RemoteFunctions.ApplySelectedPaint:FireServer(34)
+	wait(0.1)
+	game:GetService("ReplicatedStorage").RemoteFunctions.ApplySelectedPaint:FireServer(23)
+	wait(0.1)
+	game:GetService("ReplicatedStorage").RemoteFunctions.ApplySelectedPaint:FireServer(32)
+	wait(0.1)
+end

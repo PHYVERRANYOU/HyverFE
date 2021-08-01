@@ -1,0 +1,2 @@
+game:GetService("ReplicatedStorage").RemoteFunctions.FlagSong:Destroy()
+game:GetService("ReplicatedStorage").RemoteFunctions.FlagBoomboxSong:Destroy()

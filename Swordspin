@@ -1,0 +1,532 @@
+speen1 = 5
+speen2 = 10
+
+    local habies = game.ReplicatedStorage.RemoteFunctions.WearOutfit
+
+local code = "none"
+local args = {
+    Face = "";
+    
+    Hat1 = "4315489767";
+    Hat2 = "4458601937";
+    Hat3 = "4506945409";
+    Hat4 = "4794315940";
+
+    RemoveShirt = false;
+    
+    Pants = "";
+    RPDesc = "";
+    RPName = "";
+    Shirt = "";
+}
+
+habies:InvokeServer(args)
+
+local function sword1()
+    -- Main Animation
+-- Hat Position
+local j = game.Players.LocalPlayer.Character:FindFirstChild("MeshPartAccessory")
+j.Name = "sword1"
+local HAT = "sword1"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 2
+Yval.Value = 4
+Zval.Value = 0
+
+XvalO.Value = 0
+YvalO.Value = 90
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+
+spinToggle = true
+local function spin()
+    if spinToggle == true then
+       spinToggle = false
+       ZvalO.Value = ZvalO.Value -(speen2)
+       spinToggle = true
+    end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end 
+	end
+end)
+
+
+local function orie()
+ game:GetService('RunService').Stepped:connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+spin()
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character.Head.Orientation.X + XvalO.Value, plr.Character.Head.Orientation.Y + YvalO.Value, plr.Character.Head.Orientation.Z + ZvalO.Value)
+end
+end
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function sword2()
+    -- Main Animation
+-- Hat Position
+local j = game.Players.LocalPlayer.Character:FindFirstChild("MeshPartAccessory")
+j.Name = "sword2"
+local HAT = "sword2"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 1
+Yval.Value = 4
+Zval.Value = 0
+
+XvalO.Value = 0
+YvalO.Value = 90
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+
+spinToggle = true
+local function spin()
+    if spinToggle == true then
+       spinToggle = false
+       ZvalO.Value = ZvalO.Value +(speen1)
+       spinToggle = true
+    end
+end
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end 
+	end
+end)
+
+
+local function orie()
+ game:GetService('RunService').Stepped:connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+spin()
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character.Head.Orientation.X + XvalO.Value, plr.Character.Head.Orientation.Y + YvalO.Value, plr.Character.Head.Orientation.Z + ZvalO.Value)
+end
+end
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function sword3()
+    -- Main Animation
+-- Hat Position
+local j = game.Players.LocalPlayer.Character:FindFirstChild("MeshPartAccessory")
+j.Name = "sword3"
+local HAT = "sword3"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = -1
+Yval.Value = 4
+Zval.Value = 0
+
+XvalO.Value = 0
+YvalO.Value = 90
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+
+spinToggle = true
+local function spin()
+    if spinToggle == true then
+       spinToggle = false
+       ZvalO.Value = ZvalO.Value +(speen1)
+       spinToggle = true
+    end
+end
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end 
+	end
+end)
+
+
+local function orie()
+ game:GetService('RunService').Stepped:connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+spin()
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character.Head.Orientation.X + XvalO.Value, plr.Character.Head.Orientation.Y + YvalO.Value, plr.Character.Head.Orientation.Z + ZvalO.Value)
+end
+end
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function sword4()
+    -- Main Animation
+-- Hat Position
+local j = game.Players.LocalPlayer.Character:FindFirstChild("MeshPartAccessory")
+j.Name = "sword4"
+local HAT = "sword4"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = -2
+Yval.Value = 4
+Zval.Value = 0
+
+XvalO.Value = 0
+YvalO.Value = 90
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+
+spinToggle = true
+local function spin()
+    if spinToggle == true then
+       spinToggle = false
+       ZvalO.Value = ZvalO.Value -(speen2)
+       spinToggle = true
+    end
+end
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end 
+	end
+end)
+
+
+local function orie()
+ game:GetService('RunService').Stepped:connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+spin()
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character.Head.Orientation.X + XvalO.Value, plr.Character.Head.Orientation.Y + YvalO.Value, plr.Character.Head.Orientation.Z + ZvalO.Value)
+end
+end
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function sword5()
+        -- Main Animation
+-- Hat Position
+local j = game.Players.LocalPlayer.Character:FindFirstChild("BladeMasterAccessory")
+j.Name = "sword1"
+local HAT = "sword1"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = 4
+Zval.Value = 0
+
+XvalO.Value = 0
+YvalO.Value = 90
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+
+spinToggle = true
+local function spin()
+    if spinToggle == true then
+       spinToggle = false
+       ZvalO.Value = ZvalO.Value -(speen2)
+       spinToggle = true
+    end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end 
+	end
+end)
+
+
+local function orie()
+ game:GetService('RunService').Stepped:connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+spin()
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character.Head.Orientation.X + XvalO.Value, plr.Character.Head.Orientation.Y + YvalO.Value, plr.Character.Head.Orientation.Z + ZvalO.Value)
+end
+end
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+sword1()
+sword2()
+sword3()
+sword4()
+sword5()

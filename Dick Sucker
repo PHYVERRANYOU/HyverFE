@@ -1,0 +1,599 @@
+ local habies = game.ReplicatedStorage.RemoteFunctions.WearOutfit
+
+local code = "158066212"
+local args = {
+    Face = "";
+    
+    Hat1 = "3810500963";
+    Hat2 = "4822592866";
+    Hat3 = "4911305457";
+    Hat4 = "17614451";
+    Hat5 = "5355792614";
+    Hat6 = "17877340";
+
+    RemoveShirt = false;
+    
+    Pants = "";
+    RPDesc = "";
+    RPName = "";
+    Shirt = "";
+}
+
+
+habies:InvokeServer(args)
+
+
+local function penis_Shaft()
+    -- Main Animation
+-- Hat Position
+local HAT = "Meshes/QuadStack_FBXAccessory"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = -2.5
+Zval.Value = -1.5
+
+XvalO.Value = 90
+YvalO.Value = 0
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.SpecialMesh:Destroy()
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+ game:GetService('RunService').Stepped:connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character.Head.Orientation.X + XvalO.Value, plr.Character.Head.Orientation.Y + YvalO.Value, plr.Character.Head.Orientation.Z + ZvalO.Value)
+end
+end
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function penis_Left_Ball()
+    -- Main Animation
+-- Hat Position
+local HAT = "MarsPet"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = -.4
+Yval.Value = -3
+Zval.Value = -1
+
+XvalO.Value = 90
+YvalO.Value = 0
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {}
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.SpecialMesh:Destroy()
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game:GetService('RunService').Stepped:connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character.Head.Orientation.X + XvalO.Value, plr.Character.Head.Orientation.Y + YvalO.Value, plr.Character.Head.Orientation.Z + ZvalO.Value)
+end
+end
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function penis_Right_Ball()
+    -- Main Animation
+-- Hat Position
+local HAT = "Uranus"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = .4
+Yval.Value = -3
+Zval.Value = -1
+
+XvalO.Value = 90
+YvalO.Value = 0
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.SpecialMesh:Destroy()
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game:GetService('RunService').Stepped:connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character.Head.Orientation.X + XvalO.Value, plr.Character.Head.Orientation.Y + YvalO.Value, plr.Character.Head.Orientation.Z + ZvalO.Value)
+end
+end
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function penis_Tip()
+    -- Main Animation
+-- Hat Position
+local HAT = "Mushroom"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = -2.5
+Zval.Value = -3.3
+
+XvalO.Value = -90
+YvalO.Value = 0
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character.Head.Orientation.X + XvalO.Value, plr.Character.Head.Orientation.Y + YvalO.Value, plr.Character.Head.Orientation.Z + ZvalO.Value)
+end
+end
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function penis_Sucker()
+    -- Main Animation
+-- Hat Position
+local HAT = "Gerald"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = -2.4
+Zval.Value = -4
+
+XvalO.Value = 0
+YvalO.Value = 180
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+succToggle = true
+local function succ()
+    if succToggle == true then
+    succToggle = false
+    Zval.Value = -3.6
+    wait()
+    Zval.Value = -4.4
+    wait()
+    Zval.Value = -4.8
+    wait()
+    Zval.Value = -5
+    wait()
+    Zval.Value = -5.4
+    wait()
+    Zval.Value = -5
+    wait()
+    Zval.Value = -4.8
+    wait()
+    Zval.Value = -4.4
+    wait()
+    Zval.Value = -4
+    wait()
+    succToggle = true
+    end
+end
+
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+succ()
+    b.Orientation = Vector3.new(plr.Character.Head.Orientation.X + XvalO.Value, plr.Character.Head.Orientation.Y + YvalO.Value, plr.Character.Head.Orientation.Z + ZvalO.Value)
+end
+end
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function penis_Pubes()
+    -- Main Animation
+-- Hat Position
+local HAT = "Ultra-Fabulous Hair Brown"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = -2.2
+Zval.Value = -.4
+
+XvalO.Value = -90
+YvalO.Value = 0
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character.Head.Orientation.X + XvalO.Value, plr.Character.Head.Orientation.Y + YvalO.Value, plr.Character.Head.Orientation.Z + ZvalO.Value)
+end
+end
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+penis_Shaft()
+penis_Left_Ball()
+penis_Right_Ball()
+penis_Tip()
+penis_Sucker()
+penis_Pubes()
+

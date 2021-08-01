@@ -1,0 +1,94 @@
+
+
+local args = {
+    [1] = 327
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = 329
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = 330
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = 302
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = 303
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))
+
+
+
+local args = {
+    [1] = 322
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))
+
+
+
+local args = {
+    [1] = 305
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = 300
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = 301
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = 264
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = 265
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))
+
+
+
+local args = {
+    [1] = 268
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = 267
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.RequestToEquipGear:InvokeServer(unpack(args))

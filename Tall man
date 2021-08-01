@@ -1,0 +1,919 @@
+  local habies = game.ReplicatedStorage.RemoteFunctions.WearOutfit
+
+local code = "63690008"
+local args = {
+    Face = "";
+    
+    Hat1 = "376524487";
+    Hat2 = "451220849";
+    Hat3 = "20372960";
+    Hat4 = "62724852";
+    Hat5 = "48474294";
+    Hat6 = "62234425";
+    Hat7 = "63690008";
+
+    RemoveShirt = false;
+    
+    Pants = "";
+    RPDesc = "";
+    RPName = "";
+    Shirt = "";
+}
+
+habies:InvokeServer(args)
+
+local function rightLeg()
+    -- Main Animation
+-- Hat Position
+local HAT = "Bedhead"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = -2
+Zval.Value = 0
+
+XvalO.Value = 90
+YvalO.Value = 0
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+
+hum.HipHeight = 4
+game['Run Service'].RenderStepped:Connect(function()
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+end)
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.Mesh:Destroy()
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr["Right Leg"]);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+changetog = true
+local function change()
+    if changetog == true then
+        changetog = false
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        changetog = true
+    end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character["Right Leg"].Orientation.X + XvalO.Value, plr.Character["Right Leg"].Orientation.Y + YvalO.Value, plr.Character["Right Leg"].Orientation.Z + ZvalO.Value)
+end
+end
+
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function leftLeg()
+    -- Main Animation
+-- Hat Position
+local HAT = "Pal Hair"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = -2
+Zval.Value = 0
+
+XvalO.Value = 90
+YvalO.Value = 0
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+game['Run Service'].RenderStepped:Connect(function()
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+end)
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.Mesh:Destroy()
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr["Left Leg"]);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+changetog = true
+local function change()
+    if changetog == true then
+        changetog = false
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        changetog = true
+    end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character["Left Leg"].Orientation.X + XvalO.Value, plr.Character["Left Leg"].Orientation.Y + YvalO.Value, plr.Character["Left Leg"].Orientation.Z + ZvalO.Value)
+end
+end
+
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+
+local function rightLeg2()
+    -- Main Animation
+-- Hat Position
+local HAT = "Hat1"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = -4
+Zval.Value = 0
+
+XvalO.Value = 90
+YvalO.Value = 0
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+game['Run Service'].RenderStepped:Connect(function()
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+end)
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.Mesh:Destroy()
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr["Right Leg"]);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+changetog = true
+local function change()
+    if changetog == true then
+        changetog = false
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        changetog = true
+    end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character["Right Leg"].Orientation.X + XvalO.Value, plr.Character["Right Leg"].Orientation.Y + YvalO.Value, plr.Character["Right Leg"].Orientation.Z + ZvalO.Value)
+end
+end
+
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function leftLeg2()
+    -- Main Animation
+-- Hat Position
+local HAT = "Kate Hair"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = -4
+Zval.Value = 0
+
+XvalO.Value = 90
+YvalO.Value = 0
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+game['Run Service'].RenderStepped:Connect(function()
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+end)
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.Mesh:Destroy()
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr["Left Leg"]);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+changetog = true
+local function change()
+    if changetog == true then
+        changetog = false
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        changetog = true
+    end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character["Left Leg"].Orientation.X + XvalO.Value, plr.Character["Left Leg"].Orientation.Y + YvalO.Value, plr.Character["Left Leg"].Orientation.Z + ZvalO.Value)
+end
+end
+
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function rightArm()
+    -- Main Animation
+-- Hat Position
+local HAT = "LavanderHair"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = -2
+Zval.Value = 0
+
+XvalO.Value = 90
+YvalO.Value = 0
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+game['Run Service'].RenderStepped:Connect(function()
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+end)
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.Mesh:Destroy()
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr["Right Arm"]);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+changetog = true
+local function change()
+    if changetog == true then
+        changetog = false
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        changetog = true
+    end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character["Right Arm"].Orientation.X + XvalO.Value, plr.Character["Right Arm"].Orientation.Y + YvalO.Value, plr.Character["Right Arm"].Orientation.Z + ZvalO.Value)
+end
+end
+
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function leftArm()
+    -- Main Animation
+-- Hat Position
+local HAT = "Pink Hair"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = -2
+Zval.Value = 0
+
+XvalO.Value = 90
+YvalO.Value = 0
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+game['Run Service'].RenderStepped:Connect(function()
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+end)
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.Mesh:Destroy()
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr["Left Arm"]);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+changetog = true
+local function change()
+    if changetog == true then
+        changetog = false
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        changetog = true
+    end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character["Left Arm"].Orientation.X + XvalO.Value, plr.Character["Left Arm"].Orientation.Y + YvalO.Value, plr.Character["Left Arm"].Orientation.Z + ZvalO.Value)
+end
+end
+
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function neck()
+    -- Hat Position
+local HAT = "MessyHair"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = -1.32
+Zval.Value = 0
+
+XvalO.Value = 90
+YvalO.Value = 0
+ZvalO.Value = 0
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+game['Run Service'].RenderStepped:Connect(function()
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+end)
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.Mesh:Destroy()
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Head);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+changetog = true
+local function change()
+    if changetog == true then
+        changetog = false
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        changetog = true
+    end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(plr.Character.Head.Orientation.X + XvalO.Value, plr.Character.Head.Orientation.Y + YvalO.Value, plr.Character.Head.Orientation.Z + ZvalO.Value)
+end
+end
+
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+local function sword()
+        -- Main Animation
+-- Hat Position
+local at32 = game.Players.LocalPlayer.Character:FindFirstChild("LavanderHair").Handle 
+local HAT = "MeshPartAccessory"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 0
+Yval.Value = -3
+Zval.Value = 1
+
+XvalO.Value = 180
+YvalO.Value = 90
+ZvalO.Value = 225
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+game['Run Service'].RenderStepped:Connect(function()
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+end)
+
+for _, v in pairs(hum:GetAccessories()) do
+    if v.Name == HAT then
+	local b = v.Handle;
+	b.CanCollide = false;
+	b:BreakJoints();
+	for _, k in pairs(v:GetChildren()) do
+		if not k:IsA'SpecialMesh' and not k:IsA'Part' then
+			k:Destroy();
+		end
+	end
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', at32);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+changetog = true
+local function change()
+    if changetog == true then
+        changetog = false
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        Zval.Value = math.random(-10,10)
+        Xval.Value = math.random(-10,10)
+        wait(.1)
+        changetog = true
+    end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, v in pairs(hum:GetAccessories()) do
+if v.Name == HAT then
+local b = v.Handle;
+    b.Orientation = Vector3.new(at32.Orientation.X + XvalO.Value, at32.Orientation.Y + YvalO.Value, at32.Orientation.Z + ZvalO.Value)
+end
+end
+
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 10
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+
+local function headFloat()
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://121572214"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+track:Play(.1, 1, 1)
+end
+
+local function swordHandle()
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://182393478"
+local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+track:Play(.1, 1, 1)
+end
+
+local function swordSet()
+    sword()
+    swordHandle()
+end
+rightLeg()
+leftLeg()
+rightLeg2()
+leftLeg2()
+rightArm()
+leftArm()
+neck()
+headFloat()

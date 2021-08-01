@@ -1,0 +1,191 @@
+-- Main Animation
+-- Hat Position
+local function RightArm()
+local Limb = "Right Arm"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = 2
+Yval.Value = .5
+Zval.Value = 0
+
+XvalO.Value = 0
+YvalO.Value = 0
+ZvalO.Value = 90
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+for _, b in pairs(chr:GetChildren()) do
+    if b.Name == Limb then
+	b.CanCollide = false;
+	b:BreakJoints();
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Torso);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+
+
+spintog = true
+
+local function spin()
+   if spintog == true then
+       spintog = false
+       XvalO.Value = XvalO.Value +5
+       wait()
+       spintog = true
+    end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+spin()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, b in pairs(chr:GetChildren()) do
+if b.Name == Limb then
+    b.Orientation = Vector3.new(plr.Character.Torso.Orientation.X + XvalO.Value, plr.Character.Torso.Orientation.Y + YvalO.Value, plr.Character.Torso.Orientation.Z + ZvalO.Value)
+end
+end
+
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+-- Main Animation
+-- Hat Position
+local function LeftArm()
+local Limb = "Left Arm"
+local Xval = Instance.new("NumberValue")
+local Yval = Instance.new("NumberValue")
+local Zval = Instance.new("NumberValue")
+
+local XvalO = Instance.new("NumberValue")
+local YvalO = Instance.new("NumberValue")
+local ZvalO = Instance.new("NumberValue")
+
+local num3 = Instance.new("NumberValue")
+local ori = Instance.new("NumberValue")
+local an = Instance.new("NumberValue")
+local toggle = true
+
+local angular = Vector3.new(0,0,0)
+ori.Value = 100
+num3.Value = 0
+
+Xval.Value = -2
+Yval.Value = .5
+Zval.Value = 0
+
+XvalO.Value = 0
+YvalO.Value = 0
+ZvalO.Value = -90
+
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local mov = {};
+local mov2 = {};
+
+for _, b in pairs(chr:GetChildren()) do
+    if b.Name == Limb then
+	b.CanCollide = false;
+	b:BreakJoints();
+	local still = Instance.new('BodyAngularVelocity', b);
+	local align = Instance.new('AlignPosition', b);
+	align.RigidityEnabled = true;
+	local a0 = Instance.new('Attachment', b);
+	local a1 = Instance.new('Attachment', chr.Torso);
+	align.Attachment0 = a0;
+	align.Attachment1 = a1;
+	table.insert(mov, a1);
+	table.insert(mov2, still);
+	end
+end
+
+spintog = true
+
+local function spine()
+   if spintog == true then
+       spintog = false
+       XvalO.Value = XvalO.Value -5
+       spintog = true
+    end
+end
+
+local mode = 1;
+local l = 1;
+game['Run Service'].RenderStepped:Connect(function()
+	if mode == 1 then
+		for _, v in pairs(mov) do
+		   v.Position = Vector3.new(Xval.Value, Yval.Value, Zval.Value);
+		end
+	end
+end)
+
+local function orie()
+game['Run Service'].RenderStepped:Connect(function()
+spine()
+if chr.Humanoid.Health == 0 then
+	toggle = false
+end
+for _, b in pairs(chr:GetChildren()) do
+if b.Name == Limb then
+    b.Orientation = Vector3.new(plr.Character.Torso.Orientation.X + XvalO.Value, plr.Character.Torso.Orientation.Y + YvalO.Value, plr.Character.Torso.Orientation.Z + ZvalO.Value)
+end
+end
+
+end)
+end
+
+for _, v in pairs(mov2) do
+	v.AngularVelocity = angular;
+end
+
+orie()
+end
+
+RightArm()
+LeftArm()
+end)

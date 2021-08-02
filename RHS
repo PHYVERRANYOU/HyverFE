@@ -1,1 +1,83 @@
-print("working")
+local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ShaddowScripts/Main/main/Library"))()
+
+local Main = library:CreateWindow("Hyver","Crimson")
+
+local Local5 = Main:CreateTab("LocalPlayer")
+
+local Server = Main:CreateTab("Serverside")
+
+local tab2 = Main:CreateTab("Misc")
+
+local tab3 = Main:CreateTab("GUIs")
+
+Local5:CreateToggle("Freeze",function(a)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = a
+end)
+
+Local5:CreateSlider("Walkspeed",16,300,function(value)
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+
+Local5:CreateSlider("JumpPower",50,300,function(value)
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+end)
+
+Server:CreateButton("Fire Players",function()
+loadstring(game:HttpGet'https://raw.githubusercontent.com/PHYVERRANYOU/HyverFE/main/FireAll')()
+end)
+
+Server:CreateButton("Boombox",function()
+loadstring(game:HttpGet'https://raw.githubusercontent.com/PHYVERRANYOU/HyverFE/main/Boombox')()
+end)
+
+Server:CreateButton("Rainbow car",function()
+loadstring(game:HttpGet'https://raw.githubusercontent.com/PHYVERRANYOU/HyverFE/main/Rainbowcar')()
+end)
+
+Server:CreateButton("All tools",function()
+loadstring(game:HttpGet'https://raw.githubusercontent.com/PHYVERRANYOU/HyverFE/main/AllTools')()
+end)
+
+Local5:CreateCheckbox("AntiAFK",function(a)
+local VirtualUser=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+VirtualUser:CaptureController()
+VirtualUser:ClickButton2(Vector2.new())
+end)
+end)
+
+tab2:CreateButton("Tall Man",function()
+loadstring(game:HttpGet'https://raw.githubusercontent.com/PHYVERRANYOU/HyverFE/main/Tall%20man')()
+end)
+
+tab2:CreateButton("Long Dick",function()
+loadstring(game:HttpGet'https://raw.githubusercontent.com/PHYVERRANYOU/HyverFE/main/LongDick')()
+end)
+
+tab2:CreateButton("Dick Sucker",function()
+loadstring(game:HttpGet'https://raw.githubusercontent.com/PHYVERRANYOU/HyverFE/main/Dick%20Sucker')()
+end)
+
+tab2:CreateButton("Sword Spin",function()
+loadstring(game:HttpGet'https://raw.githubusercontent.com/PHYVERRANYOU/HyverFE/main/Swordspin')()
+end)
+
+tab2:CreateButton("Arm Spin",function()
+loadstring(game:HttpGet'https://raw.githubusercontent.com/PHYVERRANYOU/HyverFE/main/ArmSpin')()
+end)
+
+tab3:CreateButton("Head Spam",function()
+loadstring(game:HttpGet'https://raw.githubusercontent.com/PHYVERRANYOU/HyverFE/main/Headspam')()
+end)
+
+
+
+asve:CreateDropdown("Word",{"Sung","Jin","Woo"},function(a)
+print(a)
+end)
+
+tab2:CreateButton("Hello",function()
+print("clicked")
+end)
+
+tab:Show()

@@ -1,0 +1,180 @@
+local args = {
+    [1] = "School Cafeteria",
+    [2] = "Taco"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+local args = {
+    [1] = "School Cafeteria",
+    [2] = "Cheezburger"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "School Cafeteria",
+    [2] = "Turkey Leg"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "School Cafeteria",
+    [2] = "Bloxiade"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "School Cafeteria",
+    [2] = "Sunblox Latte"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "School Cafeteria",
+    [2] = "Cookie"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "School Cafeteria",
+    [2] = "Apple"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "School Cafeteria",
+    [2] = "Pizza"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "School Cafeteria",
+    [2] = "Hot Dog"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "Chef Umbra's",
+    [2] = "Misfortune Cookie"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "Chef Umbra's",
+    [2] = "Void Burger"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "Chef Umbra's",
+    [2] = "Taco"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "Chef Umbra's",
+    [2] = "Space Sandwich"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "Chef Umbra's",
+    [2] = "Caique"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "Chef Umbra's",
+    [2] = "Void Pizza"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+
+local args = {
+    [1] = "Sunblox Cafe",
+    [2] = "Sunblox Latte"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+
+local args = {
+    [1] = "Sunblox Cafe",
+    [2] = "Donut"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+
+local args = {
+    [1] = "Sunblox Cafe",
+    [2] = "Cookie"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+
+local args = {
+    [1] = "Sunblox Cafe",
+    [2] = "Apple"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+local args = {
+    [1] = "Sunblox Cafe",
+    [2] = "Pizza"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+
+local args = {
+    [1] = "Sunblox Cafe",
+    [2] = "Hot Dog"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
+
+
+local args = {
+    [1] = "Sunblox Cafe",
+    [2] = "Double Cheezburger"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.PurchaseTemporaryItem:InvokeServer(unpack(args))
+
